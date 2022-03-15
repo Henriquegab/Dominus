@@ -1,6 +1,13 @@
 {
-    "/js/bootstrap.js": "/js/bootstrap.js?id=ab717f69730f9a09eda5",
-    "/css/web.css": "/css/web.css?id=b8a55feacf800751ccbb",
-    "/css/vendor.css": "/css/vendor.css?id=346b811f57ba632d8e0c",
-    "/js/vendor.js": "/js/vendor.js?id=7e371968ead04684448b"
+    "/assets/jquery/jquery.min.js": "/assets/jquery/jquery.min.js?id=4f252523d4af0b478c81",
+    "/assets/owl-carousel/css/owl.carousel.min.css": "/assets/owl-carousel/css/owl.carousel.min.css?id=b2752a850d44f5003662",
+    "/assets/owl-carousel/css/owl.theme.default.min.css": "/assets/owl-carousel/css/owl.theme.default.min.css?id=594b81805a98b267e47c",
+    "/assets/owl-carousel/js/owl.carousel.js": "/assets/owl-carousel/js/owl.carousel.js?id=ccdf893e7d8b26933af0",
+    "/assets/bootstrap/css/bootstrap.min.css": "/assets/bootstrap/css/bootstrap.min.css?id=d44328cee87c2b405213",
+    "/assets/bootstrap/css/bootstrap-grid.min.css": "/assets/bootstrap/css/bootstrap-grid.min.css?id=5d2e05b792fd25996b94",
+    "/assets/bootstrap/css/bootstrap-reboot.min.css": "/assets/bootstrap/css/bootstrap-reboot.min.css?id=5b8269058564886b9052",
+    "/assets/bootstrap/js/bootstrap.bundle.min.js": "/assets/bootstrap/js/bootstrap.bundle.min.js?id=90146f01d8a2028ed6f2",
+    "/assets/fontawesome-free/css/all.min.css": "/assets/fontawesome-free/css/all.min.css?id=ecd507b3125edc4d2a03",
+    "/assets/fontawesome-free/js/all.min.js": "/assets/fontawesome-free/js/all.min.js?id=5e29440867fdb02a48df",
+    "/css/web.css": "/css/web.css?id=f261f7543e6f42b65eac"
 }

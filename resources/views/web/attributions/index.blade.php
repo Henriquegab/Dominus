@@ -1,4 +1,4 @@
 @extends('web.layout.layout')
 @section('content')
-    <a href='https://www.freepik.com/photos/background'>Dark brick background created by rawpixel.com - www.freepik.com</a>
+    <a href='https://www.freepik.com/photos/rustic-table'>Rustic table photo created by lyashenko - www.freepik.com</a>
 @endsection

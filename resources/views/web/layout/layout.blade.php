@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
-    <link rel="stylesheet" href="{{ mix('css/vendor.css') }}">
+    {{-- Font Awesome Icons --}}
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
+    {{-- Owl carrousel --}}
+    <link rel="stylesheet" href="{{ asset('assets/owl-carousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/owl-carousel/css/owl.theme.default.min.css') }}">
+    {{-- Font Awesome Icons --}}
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
+    {{-- Bootstrap --}}
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    {{-- App theme --}}
     <link rel="stylesheet" href="{{ mix('css/web.css') }}">
 </head>
-<body>
+<body class="bg-light">
+    <figure id="background-image-container">
+        <img src="{{ URL::asset('storage/images/top-background-home.jpg') }}" alt="">
+    </figure>
     @include('web.layout.header')
     <main id="main-content">
         @yield('content')
     </main>
     @include('web.layout.footer')
+    {{-- REQUIRED SCRIPTS --}}
+    {{-- jQuery --}}
+    <script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
+    {{-- Bootstrap --}}
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    {{-- Fontawesome --}}
+    <script src="{{ asset('assets/fontawesome-free/js/all.min.js') }}"></script>
+    {{-- OwlCarosel --}}
+    <script src="{{ asset('assets/owl-carousel/js/owl.carousel.js') }}"></script>
+
     @stack('scripts')
 </body>
 </html>
