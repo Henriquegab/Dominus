@@ -6,7 +6,7 @@ body,
 html {
     font-size: 18px;
     font-family: "roboto", sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -45,6 +45,18 @@ li {
     box-sizing: border-box;
 }
 
+figure img {
+    object-fit: scale-down;
+    max-width: 100%;
+}
+
+section,
+%section,
+.section {
+    width: 100%;
+    margin: 0 auto;
+}
+
 // Corrigindo o owl
 .owl-item.active > * {
     display: flex;
@@ -79,7 +91,7 @@ li {
 
     img {
         width: 100%;
-        object-fit: contain;
+        object-fit: scale-down;
         object-position: center top;
     }
 }
@@ -103,7 +115,7 @@ li {
             max-width: 1920px;
             width: 100%;
             height: auto;
-            object-fit: contain;
+            object-fit: scale-down;
         }
     }
 
@@ -115,7 +127,7 @@ li {
             display: block;
             height: max-content;
             margin: 0;
-            color: $color_gold;
+            color: $theme_gold;
         }
     }
 
@@ -126,7 +138,7 @@ li {
         img {
             max-height: inherit;
             max-width: inherit;
-            object-fit: contain;
+            object-fit: scale-down;
         }
     }
 
@@ -156,7 +168,7 @@ li {
                 @extend %button;
 
                 &:hover {
-                    color: $color_gold;
+                    color: $theme_gold;
                 }
             }
         }
@@ -166,20 +178,146 @@ li {
 
 // #region HOME
 #home-carousel {
+    .owl-item {
+        padding: 0 20px;
+    }
     .carousel-item {
         flex-flow: row;
         align-items: center;
         height: calc(max(60vh, 400px));
 
-        figure, img {
+        figure,
+        img {
             height: 100%;
             width: 100%;
-            object-fit: contain;
+            object-fit: scale-down;
             object-position: center right;
         }
     }
 
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(calc(-50% - 27px));
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        // Setando o tamanho das setas
+        .owl-prev,
+        .owl-next {
+            margin-bottom: -4.5px;
+            font-size: 40px;
+            transition: 0.25s ease-in-out;
 
+            & svg {
+                font-size: inherit;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 }
 
-@import "responsive.scss";
+.owl-carousel.owl-carousel-light {
+    .owl-dot,
+    .owl-prev,
+    .owl-next {
+        color: white !important;
+
+        &.disabled {
+            color: $template_light_grey !important;
+        }
+    }
+}
+
+.foodmenu-list {
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu-item {
+        @extend %card-simple-border;
+        display: flex;
+        min-height: 120px;
+        margin: 0 auto 15px auto;
+
+        .image {
+            margin: 0;
+            max-width: 180px;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                max-width: inherit;
+            }
+        }
+        .content {
+            padding: 0.5rem;
+        }
+    }
+}
+
+.split-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+
+    // Definições gerais da imagem
+    figure {
+        width: 100%;
+        margin: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // Posicionando e configurando o wrap
+    & > .image:first-child:not(.image-bottom) {
+        img {
+            object-position: top left;
+        }
+    }
+    & > .image:last-child:not(.image-bottom) {
+        img {
+            object-position: top right;
+        }
+    }
+
+    &.image-bottom {
+        .image {
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-end;
+        }
+
+        & > .image:first-child:not(.image-bottom) {
+            img {
+                width: auto;
+                object-position: bottom left;
+            }
+        }
+        & > .image:last-child:not(.image-bottom) {
+            img {
+                width: auto;
+                object-position: bottom right;
+            }
+        }
+    }
+}
+
+.pitbar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+@import "web_responsive.scss";

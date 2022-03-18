@@ -1,4 +1,5 @@
 {
+    "/css/web.css": "/css/web.css?id=c2fe640ff73f83582d0e",
     "/assets/jquery/jquery.min.js": "/assets/jquery/jquery.min.js?id=4f252523d4af0b478c81",
     "/assets/owl-carousel/css/owl.carousel.min.css": "/assets/owl-carousel/css/owl.carousel.min.css?id=b2752a850d44f5003662",
     "/assets/owl-carousel/css/owl.theme.default.min.css": "/assets/owl-carousel/css/owl.theme.default.min.css?id=594b81805a98b267e47c",
@@ -8,6 +9,5 @@
     "/assets/bootstrap/css/bootstrap-reboot.min.css": "/assets/bootstrap/css/bootstrap-reboot.min.css?id=5b8269058564886b9052",
     "/assets/bootstrap/js/bootstrap.bundle.min.js": "/assets/bootstrap/js/bootstrap.bundle.min.js?id=90146f01d8a2028ed6f2",
     "/assets/fontawesome-free/css/all.min.css": "/assets/fontawesome-free/css/all.min.css?id=ecd507b3125edc4d2a03",
-    "/assets/fontawesome-free/js/all.min.js": "/assets/fontawesome-free/js/all.min.js?id=5e29440867fdb02a48df",
-    "/css/web.css": "/css/web.css?id=f261f7543e6f42b65eac"
+    "/assets/fontawesome-free/js/all.min.js": "/assets/fontawesome-free/js/all.min.js?id=5e29440867fdb02a48df"
 }

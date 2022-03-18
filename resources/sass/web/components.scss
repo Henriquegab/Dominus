@@ -1,5 +1,90 @@
-%button, .button {
+%button,
+.button {
     display: inline-block;
     padding: 0.5rem;
     transition: 0.25s ease-in-out;
+    border-radius: 10px;
+}
+
+%button-icon,
+.button-icon {
+    display: flex;
+    width: max-content;
+    align-items: center;
+
+    .icon > svg {
+        display: block;
+    }
+
+    .icon:first-child {
+        font-size: 1.25em;
+        vertical-align: middle;
+        margin: 0.15em 0.5em 0.15em 0;
+    }
+
+    .icon:last-child {
+        font-size: 1.25em;
+        vertical-align: middle;
+        margin: 0.15em 0 0.15em 0.5em;
+    }
+}
+
+%button-border-md {
+    border: solid 3px;
+}
+
+%button-shadow-md {
+    box-shadow: 2px 2px 5px 2px rgb(0 0 0 / 15%);
+}
+
+// #section BUTTON COLORS
+.button-wpp {
+    @extend %button-border-md;
+    @extend %button-shadow-md;
+
+    background-color: #25d366;
+    border-color: white;
+    color: white;
+    font-weight: 600;
+
+    &:not(.no_hover):hover {
+        background-color: #23b85a;
+        color: white;
+    }
+}
+
+.button-ifood {
+    @extend %button-border-md;
+    @extend %button-shadow-md;
+
+    background-color: #ea1d2c;
+    border-color: white;
+    color: white;
+    font-weight: 600;
+
+    &:not(.no_hover):hover {
+        background-color: #b91722;
+        color: white;
+    }
+}
+
+.button-white-border {
+    @extend %button-border-md;
+    @extend %button-shadow-md;
+
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    font-weight: 600;
+
+    &:not(.no_hover):hover {
+        background-color: rgba($color: #000000, $alpha: 0.15);
+        color: white;
+    }
+}
+// #endsection
+
+%card-simple-border {
+    @extend %button-shadow-md;
+    border: 1px solid lightgrey;
 }

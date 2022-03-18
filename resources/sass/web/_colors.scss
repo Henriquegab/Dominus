@@ -1,1 +1,27 @@
-$color_gold: #f0cd7b;
+// Template color
+$template_light: #f8f9fa;
+$template_light_grey: #bebebe;
+
+// Theme color
+$theme_gold: #f0cd7b;
+$theme_primary: #ea1d2c;
+
+// Gradients
+%gradient-gold {
+    background: rgb(49, 46, 39);
+    background: linear-gradient(9deg, rgba(240,205,123,1) 0%, rgba(212,170,34,1) 100%);
+}
+
+// Classes
+
+// Gold & Black
+.bg_golden {
+    @extend %gradient-gold;
+
+    color: rgb(43, 43, 43);
+}
+
+.bg_primary {
+    background-color: $theme_primary;
+    color: white;
+}
