@@ -88,3 +88,11 @@
     @extend %button-shadow-md;
     border: 1px solid lightgrey;
 }
+
+.footer-nav-list {
+    display: flex;
+    flex-flow: column;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+}

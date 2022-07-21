@@ -10,10 +10,9 @@
         </div>
         <div class="col-md main-nav-list-container">
             <ul class="main-nav-list">
-                <li class="nav-item"><a href="#">HOME</a></li>
-                <li class="nav-item"><a href="#">CARDÁPIO DO DIA</a></li>
-                <li class="nav-item"><a href="#">CONTATO</a></li>
-                <li class="nav-item"><a href="#">SOBRE NÓS</a></li>
+                <li class="nav-item"><a href="{{ route('home.index') }}">HOME</a></li>
+                <li class="nav-item"><a href="{{ route('home.index') }}#cardapio">CARDÁPIO DO DIA</a></li>
+                <li class="nav-item"><a href="{{ route('home.index') }}#contato">CONTATO</a></li>
             </ul>
         </div>
     </div>

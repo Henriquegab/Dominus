@@ -14,6 +14,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Home@index')->name('home.index');
-
-Route::get('login', 'Login@index')->name('login.index');
-Route::get('login/authorize', 'Login@login')->name('login.authorize');

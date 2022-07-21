@@ -320,4 +320,8 @@ section,
     padding: 0.5rem 1rem;
 }
 
+#main-footer {
+    @extend %bg_primary;
+}
+
 @import "web_responsive.scss";

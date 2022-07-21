@@ -4,7 +4,10 @@ $template_light_grey: #bebebe;
 
 // Theme color
 $theme_gold: #f0cd7b;
-$theme_primary: #ea1d2c;
+$theme_primary: #111;
+$theme_primary_contrast: #fff;
+$theme_secondary: #ea1d2c;
+$theme_secondary_contrast: #fff;
 
 // Gradients
 %gradient-gold {
@@ -21,7 +24,14 @@ $theme_primary: #ea1d2c;
     color: rgb(43, 43, 43);
 }
 
-.bg_primary {
+.bg_primary,
+%bg_primary {
     background-color: $theme_primary;
-    color: white;
+    color: $theme_primary_contrast;
+}
+
+.bg_secondary,
+%bg_secondary {
+    background-color: $theme_secondary;
+    color: $theme_secondary_contrast;
 }

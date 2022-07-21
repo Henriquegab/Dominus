@@ -27,7 +27,7 @@
 </section>
 <section class="section-small">
     <div class="card shadow-sm">
-        <div class="split-section flex-wrap-reverse px-2">
+        <div id="contato" class="split-section flex-wrap-reverse px-2">
             <div class="col-md-6 py-4">
                 <h2 class="mb-4">Faça seu pedido pelo whatsapp</h2>
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
@@ -57,7 +57,7 @@
                 </a>
             </div>
         </div>
-        <div class="split-section image-bottom bg_primary px-2 pb-0">
+        <div class="split-section image-bottom bg_secondary px-2 pb-0">
             <div class="col-md-6 py-4">
                 <h2 class="mb-4">Ligue para a gente e faça seu pedido</h2>
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
@@ -77,7 +77,7 @@
         </div>
         <div class="foodmenu-list">
             <h2 class="text-center my-4">Cardápio do dia</h2>
-            <div class="menu">
+            <div id="cardapio" class="menu">
                 <div class="menu-item">
                     <figure class="image">
                         <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
