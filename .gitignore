@@ -6,7 +6,6 @@ vendor
 public/assets
 public/css
 public/js
-public/fonts/*
 .env
 .env.backup
 .phpunit.result.cache
