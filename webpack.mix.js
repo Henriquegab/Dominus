@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.sass('resources/sass/web/web.scss', 'public/css')
-    .version()
+    // .version()
 
 // Jquery
 mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/assets/jquery/jquery.min.js')
