@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +15,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'Home@index')->name('home.index');
+Route::get('/', 'HomeController@index')->name('home.index');
 
-// Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+
+Route::middleware('auth')->group(
+    function(){
+
+        Route::get('/admin/home', 'admin\MenuController@index')->name('admin.home');
+
+
+        Route::resource('/admin/cardapio','Admin\CardapioController');
+
+    }
+
+);
