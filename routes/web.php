@@ -27,8 +27,9 @@ Route::middleware('auth')->group(
         Route::get('/admin/home', 'admin\MenuController@index')->name('admin.home');
 
 
-        Route::resource('/admin/cardapio','Admin\CardapioController');
+        Route::resource('/admin/cardapio','Admin\CardapioController')->except('store');
         Route::post('/admin/cardapio/create2','Admin\CardapioController@create2')->name('cardapio.create2');
+        Route::post('/admin/cardapio/store/{quantidade}','Admin\CardapioController@store')->name('cardapio.store');
 
     }
 

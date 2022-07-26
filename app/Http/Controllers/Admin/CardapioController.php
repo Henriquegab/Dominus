@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Cardapio;
+use App\Models\Prato;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCardapioRequest;
 use App\Http\Requests\UpdateCardapioRequest;
@@ -50,9 +51,54 @@ class CardapioController extends Controller
      * @param  \App\Http\Requests\StoreCardapioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $quantidade)
     {
-        dd($request->all());
+
+
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     'nome' => 'required|gte:3|lte:60',
+        //     'conteudo' => 'required|lte:255|gte:3'
+        // ]);
+
+        // dd($request['imagem']);
+
+            // dd($request->all());
+
+        $cardapio = Cardapio::create();
+
+
+            for($i=0; $i < $quantidade; $i++){
+                $data = [];
+
+
+                if ($request->imagem[$i]) {
+                    $imagem_urn = $request->imagem[$i]->store('img');
+                    $data['imagem'] = $imagem_urn;
+                    $data['nome'] = $request->nome[$i];
+                    $data['conteudo'] = $request->conteudo[$i];
+                    $data['cardapio_id'] = $cardapio->id;
+                }
+
+                // dd($cardapio->id);
+
+                Prato::create($data);
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        return redirect()->route('admin.home');
     }
 
     /**
