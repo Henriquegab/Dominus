@@ -73,14 +73,15 @@ class CardapioController extends Controller
 
 
                 if ($request->imagem[$i]) {
-                    $imagem_urn = $request->imagem[$i]->store('img');
-                    $data['imagem'] = $imagem_urn;
+                    $imagem_urn = $request->imagem[$i]->store('public\images');
+                    $data['imagem'] = substr($imagem_urn, 14);
+
                     $data['nome'] = $request->nome[$i];
                     $data['conteudo'] = $request->conteudo[$i];
                     $data['cardapio_id'] = $cardapio->id;
                 }
 
-                // dd($cardapio->id);
+
 
                 Prato::create($data);
 

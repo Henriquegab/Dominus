@@ -78,6 +78,26 @@
         <div class="foodmenu-list">
             <h2 class="text-center my-4">Cardápio do dia</h2>
             <div id="cardapio" class="menu">
+
+                @if (isset($pratos))
+                    @foreach ($pratos as $prato)
+
+
+                    <div class="menu-item">
+                        <figure class="image">
+                            <img src="{{ URL::asset('storage/images/'.$prato->imagem) }}" alt="cardapio">
+                        </figure>
+                        <div class="content">
+                            <h5 class="title">{{ $prato->nome }}</h5>
+                            <span class="description">{{ $prato->conteudo }}</span>
+                        </div>
+                    </div>
+
+
+                    @endforeach
+
+                @else
+
                 <div class="menu-item">
                     <figure class="image">
                         <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
@@ -114,6 +134,15 @@
                         <span class="description">Acompanha batatas fritas e arroz</span>
                     </div>
                 </div>
+
+
+                @endif
+
+
+
+
+
+
             </div>
         </div>
     </div>
