@@ -6,6 +6,7 @@ use App\Models\Cardapio;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCardapioRequest;
 use App\Http\Requests\UpdateCardapioRequest;
+use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
@@ -26,7 +27,21 @@ class CardapioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cardapios.create');
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create2(Request $request)
+    {
+
+
+        $quantidade = $request->quantidade;
+
+
+        return view('admin.cardapios.create2', ['quantidade' => $quantidade]);
     }
 
     /**
@@ -35,9 +50,9 @@ class CardapioController extends Controller
      * @param  \App\Http\Requests\StoreCardapioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCardapioRequest $request)
+    public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\MenuController;
-use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +28,7 @@ Route::middleware('auth')->group(
 
 
         Route::resource('/admin/cardapio','Admin\CardapioController');
+        Route::post('/admin/cardapio/create2','Admin\CardapioController@create2')->name('cardapio.create2');
 
     }
 
