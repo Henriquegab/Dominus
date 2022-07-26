@@ -4,6 +4,7 @@
             <figure class="header-logo m-0">
                 <img src="{{ URL::asset('storage/images/logo.png') }}" alt="logo do Dominus" class="img-fluid">
             </figure>
+            <title>Dominus Restaurante</title>
             <span class="header-title">
                 <h2>Dominus Restaurante</h2>
             </span>
