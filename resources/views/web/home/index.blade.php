@@ -31,7 +31,7 @@
             <div class="col-md-6 py-4">
                 <h2 class="mb-4">Faça seu pedido pelo whatsapp</h2>
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
-                <a href="#" class="button button-wpp button-icon">
+                <a  href="https://wa.me/55{{ preg_replace('/([() \-_]*)/i', '', $redes_sociais->whatsapp) }}" target="_blank" class="button button-wpp button-icon">
                     <span class="text">Mande-nos uma mensagem</span>
                     <span class="icon"><i class="fab fa-whatsapp"></i></span>
                 </a>
@@ -51,7 +51,7 @@
             <div class="col-md-6 py-4">
                 <h2 class="mb-4">Também estamos no IFood</h2>
                 <p class="mb-4">Acesse o dominus pelo IFood e tenha acesso aos nossos deliciosos pratos onde quiser</p>
-                <a href="#" class="button button-ifood button-icon">
+                <a href="{{ $redes_sociais->ifood }}" target="_blank" class="button button-ifood button-icon">
                     <span class="icon"><i class="fas fa-utensils"></i></span>
                     <span class="text">Visite-nos no IFood</span>
                 </a>
@@ -63,7 +63,7 @@
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
                 <span class="button button-white-border button-icon no_hover">
                     <span class="icon"><i class="fas fa-phone"></i></span>
-                    <span class="text h4 m-0">(38) 998786137</span>
+                    <span class="text h4 m-0">{{ $redes_sociais->telefone }}</span>
                 </span>
             </div>
             <div class="col-md-6 image">

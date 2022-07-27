@@ -379,6 +379,9 @@ section,
 #home-carousel .owl-nav .owl-next:hover {
   transform: scale(1.2);
 }
+#home-carousel .owl-dots {
+  padding: 0 15px;
+}
 
 .owl-carousel.owl-carousel-light .owl-dot,
 .owl-carousel.owl-carousel-light .owl-prev,

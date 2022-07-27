@@ -230,10 +230,21 @@ return [
 
         // Sidebar items:
 
-
+        ['header' => 'PÁGINA WEB'],
+        [
+            'text' => 'Carrossel de imagens',
+            'route'  => 'admin.carrossel.index',
+            'icon' => 'fas fa-images',
+        ],
+        ['header' => 'SOCIAL'],
+        [
+            'text' => 'Meios de contato',
+            'route'  => 'admin.redes-sociais.index',
+            'icon' => 'fas fa-share-alt',
+        ],
         ['header' => 'CARDÁPIO'],
         [
-            'text' => 'Atualizar cardápio do dia',
+            'text' => 'Atualizar cardápio',
             'route'  => 'cardapio.create',
             'icon' => 'fas fa-fw fa-user',
         ],

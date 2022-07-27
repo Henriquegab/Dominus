@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/', 'Web\Home@index')->name('home.index');
 
 
 
@@ -24,7 +24,7 @@ Auth::routes();
 Route::middleware('auth')->group(
     function(){
 
-        Route::get('/admin/home', 'admin\MenuController@index')->name('admin.home');
+        Route::get('/admin/home', 'Admin\MenuController@index')->name('admin.home');
 
 
         Route::resource('/admin/cardapio','Admin\CardapioController')->except('store');
@@ -34,3 +34,10 @@ Route::middleware('auth')->group(
     }
 
 );
+
+Route::middleware('auth')->prefix('admin')->as('admin.')->namespace('\App\Http\Controllers\Admin')->group(function(){
+    Route::get('redes-sociais', 'RedesSociais@index')->name('redes-sociais.index');
+    Route::post('redes-sociais', 'RedesSociais@store')->name('redes-sociais.store');
+
+    Route::resource('carrosseis', 'Carrosseis')->names('carrossel');
+});
