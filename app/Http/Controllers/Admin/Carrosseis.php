@@ -48,7 +48,7 @@ class Carrosseis extends Controller
 
         try {
             if(!empty($request->file('imagem'))) {
-                $request->file("imagem")->store('public.carroussel');
+                $request->file("imagem")->store('public/carrossel');
             }
 
             Carrossel::create($dados);
