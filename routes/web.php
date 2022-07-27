@@ -39,5 +39,7 @@ Route::middleware('auth')->prefix('admin')->as('admin.')->namespace('\App\Http\C
     Route::get('redes-sociais', 'RedesSociais@index')->name('redes-sociais.index');
     Route::post('redes-sociais', 'RedesSociais@store')->name('redes-sociais.store');
 
-    Route::resource('carrosseis', 'Carrosseis')->names('carrossel');
+    Route::resource('carrosseis', 'Carrosseis')->names('carrossel')->parameters([
+        'carrosseis' => 'carrossel'
+    ]);
 });

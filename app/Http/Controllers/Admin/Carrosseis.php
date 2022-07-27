@@ -42,30 +42,20 @@ class Carrosseis extends Controller
     {
         $dados = $request->validate([
             'nome' => ['required', 'min:3', 'string'],
-            'descricao' => ['string'],
+            'descricao' => ['nullable', 'string'],
             'imagem' => ['image','mimes:jpeg,png,jpg,gif,svg'],
         ]);
 
         try {
             if(!empty($request->file('imagem'))) {
-                $request->file("imagem")->store('public/carrossel');
+                $imagem = $request->file("imagem")->store('public/carrossel');
             }
 
+            $dados['imagem'] = $imagem ?? '';
             Carrossel::create($dados);
         } catch (\Exception $e){}
 
         return redirect()->route('admin.carrossel.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -74,9 +64,9 @@ class Carrosseis extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Carrossel $carrossel)
     {
-        //
+        return view('admin.carrosseis.edit', \compact('carrossel'));
     }
 
     /**
@@ -86,9 +76,28 @@ class Carrosseis extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Carrossel $carrossel)
     {
-        //
+        $dados = $request->validate([
+            'nome' => ['required', 'min:3', 'string'],
+            'descricao' => ['nullable', 'string'],
+            'imagem' => ['image','mimes:jpeg,png,jpg,gif,svg'],
+        ]);
+
+        try {
+            if(!empty($request->file('imagem'))) {
+                if(Storage::exists($carrossel->imagem)) {
+                    Storage::delete($carrossel->imagem);
+                }
+
+                $imagem = $request->file("imagem")->store('public/carrossel');
+                $dados['imagem'] = !empty($imagem) ? str_replace('public', 'storage', $imagem) : '';
+            }
+
+            $carrossel->update($dados);
+        } catch (\Exception $e){}
+
+        return redirect()->route('admin.carrossel.index');
     }
 
     /**
@@ -97,9 +106,8 @@ class Carrosseis extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Carrossel $carrossel)
     {
-        $carrossel = Carrossel::findOrFail($id);
         if(Storage::exists($carrossel->imagem)) {
             Storage::delete($carrossel->imagem);
         }

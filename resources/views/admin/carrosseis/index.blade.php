@@ -41,7 +41,7 @@
                     <td>{{ $carrossel->id }}</td>
                     <td>{{ $carrossel->nome }}</td>
                     <td>
-                        <a href="#" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                        <a href="{{ route('admin.carrossel.edit', $carrossel) }}" class="btn btn-success"><i class="fas fa-edit"></i></a>
                         <form class="d-inline" action="{{ route('admin.carrossel.destroy', $carrossel) }}" method="POST">
                             @csrf
                             @method('DELETE')

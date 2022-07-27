@@ -2,27 +2,15 @@
 @section('content')
 <section id="home-carousel">
     <div class="owl-carousel owl-carousel-light">
-        <div class="carousel-item">
-            <div class="col-md-6 text-white">
-                <h1>Uma comida deliciosa para seu dia dia</h1>
-                <p>Venha conhecer nossas delícias caseiras e se encantar com o sabor</p>
+        @foreach ($carrosseis as $carrossel)
+            <div class="carousel-item">
+                <div class="col-md-6 text-white">
+                    <h2>{{ $carrossel->nome }}</h2>
+                    <p>{{ $carrossel->descricao }}</p>
+                </div>
+                <figure class="m-0 col-md-6"><img src="{{ URL::asset($carrossel->imagem) }}" alt=""></figure>
             </div>
-            <figure class="m-0 col-md-6"><img src="{{ URL::asset('storage/images/carousel-image-1.png') }}" alt=""></figure>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-6 text-white">
-                <h2>Uma comida deliciosa para seu dia dia</h2>
-                <p>Venha conhecer nossas delícias caseiras e se encantar com o sabor</p>
-            </div>
-            <figure class="m-0 col-md-6"><img src="{{ URL::asset('storage/images/carousel-image-2.png') }}" alt=""></figure>
-        </div>
-        <div class="carousel-item">
-            <div class="col-md-6 text-white">
-                <h2>Uma comida deliciosa para seu dia dia</h2>
-                <p>Venha conhecer nossas delícias caseiras e se encantar com o sabor</p>
-            </div>
-            <figure class="m-0 col-md-6"><img src="{{ URL::asset('storage/images/carousel-image-3.png') }}" alt=""></figure>
-        </div>
+        @endforeach
     </div>
 </section>
 <section class="section-small">
@@ -63,7 +51,7 @@
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
                 <span class="button button-white-border button-icon no_hover">
                     <span class="icon"><i class="fas fa-phone"></i></span>
-                    <span class="text h4 m-0">{{ $redes_sociais->telefone }}</span>
+                    <a href="tel:{{ preg_replace('/([() \-_]*)/i', '', $redes_sociais->telefone) }}" class="text h4 m-0">{{ $redes_sociais->telefone }}</a>
                 </span>
             </div>
             <div class="col-md-6 image">
@@ -78,11 +66,7 @@
         <div class="foodmenu-list">
             <h2 class="text-center my-4">Cardápio do dia</h2>
             <div id="cardapio" class="menu">
-
-                @if (isset($pratos))
-                    @foreach ($pratos as $prato)
-
-
+                @foreach ($pratos as $prato)
                     <div class="menu-item">
                         <figure class="image">
                             <img src="{{ URL::asset('storage/images/'.$prato->imagem) }}" alt="cardapio">
@@ -92,57 +76,7 @@
                             <span class="description">{{ $prato->conteudo }}</span>
                         </div>
                     </div>
-
-
-                    @endforeach
-
-                @else
-
-                <div class="menu-item">
-                    <figure class="image">
-                        <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
-                    </figure>
-                    <div class="content">
-                        <h5 class="title">Bife assado com batatas</h5>
-                        <span class="description">Acompanha batatas fritas e arroz</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <figure class="image">
-                        <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
-                    </figure>
-                    <div class="content">
-                        <h5 class="title">Bife assado com batatas</h5>
-                        <span class="description">Acompanha batatas fritas e arroz</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <figure class="image">
-                        <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
-                    </figure>
-                    <div class="content">
-                        <h5 class="title">Bife assado com batatas</h5>
-                        <span class="description">Acompanha batatas fritas e arroz</span>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <figure class="image">
-                        <img src="{{ URL::asset('storage/images/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table-Thumb.jpg') }}" alt="">
-                    </figure>
-                    <div class="content">
-                        <h5 class="title">Bife assado com batatas</h5>
-                        <span class="description">Acompanha batatas fritas e arroz</span>
-                    </div>
-                </div>
-
-
-                @endif
-
-
-
-
-
-
+                @endforeach
             </div>
         </div>
     </div>
