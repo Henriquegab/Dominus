@@ -1,3 +1,6 @@
+@php
+    $redes_sociais = \App\Models\RedeSocial::first();
+@endphp
 <footer id="main-footer">
     <div class="container mx-auto">
         <div class="row pt-3">
@@ -12,8 +15,9 @@
             <div class="col-sm-6">
                 <h5>Encontre-nos nas redes sociais</h5>
                 <nav class="footer-nav-list">
-                    <a href="#">Instagram</a>
-                    <a href="#">whatsapp</a>
+                    <a href="tel:{{ preg_replace('/([() \-_]*)/i', '', $redes_sociais->telefone) }}" target="_blank">Telefone</a>
+                    <a href="{{ $redes_sociais->ifood }}" target="_blank">IFood</a>
+                    <a href="https://wa.me/55{{ preg_replace('/([() \-_]*)/i', '', $redes_sociais->whatsapp) }}" target="_blank">Whatsapp</a>
                 </nav>
             </div>
         </div>

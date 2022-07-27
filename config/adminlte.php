@@ -236,11 +236,15 @@ return [
             'route'  => 'admin.carrossel.index',
             'icon' => 'fas fa-images',
         ],
-        ['header' => 'SOCIAL'],
         [
             'text' => 'Meios de contato',
             'route'  => 'admin.redes-sociais.index',
             'icon' => 'fas fa-share-alt',
+        ],
+        [
+            'text' => 'Configurações',
+            'route'  => 'admin.configuracoes.index',
+            'icon' => 'fas fa-cog',
         ],
         ['header' => 'CARDÁPIO'],
         [

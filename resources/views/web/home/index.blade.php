@@ -26,14 +26,14 @@
             </div>
             <div class="col-md-6 image">
                 <figure>
-                    <img src="{{ URL::asset('storage/images/home-Whatsapp-celular-banner.png') }}" alt="">
+                    <img src="{{ URL::asset('storage/template_images/home-Whatsapp-celular-banner.png') }}" alt="">
                 </figure>
             </div>
         </div>
         <div class="split-section px-2">
             <div class="col-md-6 image">
                 <figure>
-                    <img src="{{ URL::asset('storage/images/home-IFood-celular-banner.png') }}" alt="">
+                    <img src="{{ URL::asset('storage/template_images/home-IFood-celular-banner.png') }}" alt="">
                 </figure>
             </div>
             <div class="col-md-6 py-4">
@@ -56,7 +56,7 @@
             </div>
             <div class="col-md-6 image">
                 <figure>
-                    <img src="{{ URL::asset('storage/images/home-phone-banner.png') }}" alt="">
+                    <img src="{{ URL::asset('storage/template_images/home-phone-banner.png') }}" alt="">
                 </figure>
             </div>
         </div>

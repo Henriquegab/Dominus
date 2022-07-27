@@ -1,3 +1,6 @@
+@php
+    $configuracao = \App\Models\Configuracao::get();
+@endphp
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
+    <link rel="icon" href="{{ URL::asset($configuracao->logo) }}">
     {{-- Font Awesome Icons --}}
     <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
     {{-- Owl carrousel --}}
@@ -23,7 +27,7 @@
     <figure id="background-image-container">
         <img src="{{ URL::asset('storage/images/top-background-home.jpg') }}" alt="">
     </figure>
-    @include('web.layout.header')
+    @include('web.layout.header', \compact('configuracao'))
     <main id="main-content">
         @yield('content')
     </main>

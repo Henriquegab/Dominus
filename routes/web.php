@@ -42,4 +42,7 @@ Route::middleware('auth')->prefix('admin')->as('admin.')->namespace('\App\Http\C
     Route::resource('carrosseis', 'Carrosseis')->names('carrossel')->parameters([
         'carrosseis' => 'carrossel'
     ]);
+
+    Route::get('configuracoes', 'Configuracoes@index')->name('configuracoes.index');
+    Route::post('configuracoes', 'Configuracoes@store')->name('configuracoes.store');
 });

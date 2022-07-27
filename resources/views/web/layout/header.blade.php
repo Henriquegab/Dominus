@@ -1,14 +1,14 @@
 <header id="main-header">
     <div class="container d-flex py-2 px-0">
-        <div class="logo-container col d-flex justify-content-start">
+        <a class="logo-container col d-flex justify-content-start" href="{{ route('home.index') }}">
             <figure class="header-logo m-0">
-                <img src="{{ URL::asset('storage/images/logo.png') }}" alt="logo do Dominus" class="img-fluid">
+                <img src="{{ URL::asset($configuracao->logo) }}" alt="logo do Dominus" class="img-fluid">
             </figure>
             <title>Dominus Restaurante</title>
             <span class="header-title">
                 <h2>Dominus Restaurante</h2>
             </span>
-        </div>
+        </a>
         <div class="col-md main-nav-list-container">
             <ul class="main-nav-list">
                 <li class="nav-item"><a href="{{ route('home.index') }}">HOME</a></li>
