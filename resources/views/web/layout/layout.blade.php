@@ -36,7 +36,7 @@
     {{-- Fontawesome --}}
     <script src="{{ asset('assets/fontawesome-free/js/all.min.js') }}"></script>
     {{-- OwlCarosel --}}
-    <script src="{{ asset('assets/owl-carousel/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('assets/owl-carousel/js/owl.carousel.min.js') }}"></script>
 
     @stack('scripts')
 </body>
