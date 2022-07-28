@@ -6,6 +6,7 @@
 /public/assets/*
 /storage/*.key
 /storage/app/public/carrossel/*
+/storage/app/public/images/*
 /vendor
 .env
 .env.backup
