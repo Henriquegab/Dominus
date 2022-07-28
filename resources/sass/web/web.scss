@@ -20,6 +20,10 @@ a {
         color: inherit;
         text-decoration: none;
     }
+
+    &.no-link {
+        text-decoration: none !important;
+    }
 }
 
 h1 {
@@ -178,13 +182,19 @@ section,
 
 // #region HOME
 #home-carousel {
+    padding-top: 0 !important;
+
     .owl-item {
-        padding: 0 20px;
+        padding: 0 2rem;
     }
     .carousel-item {
         flex-flow: row;
         align-items: center;
         height: calc(max(60vh, 400px));
+
+        h2 {
+            margin-bottom: 2rem;
+        }
 
         figure,
         img {
@@ -198,11 +208,11 @@ section,
     .owl-nav {
         position: absolute;
         top: 50%;
-        left: 0;
+        left: 0.5rem;
         transform: translateY(calc(-50% - 27px));
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: calc(100% - 1rem);
         // Setando o tamanho das setas
         .owl-prev,
         .owl-next {
@@ -220,7 +230,8 @@ section,
         }
     }
     .owl-dots {
-        padding: 0 15px;
+        padding: 0 1rem;
+        transform: translateY(-100%);
     }
 }
 

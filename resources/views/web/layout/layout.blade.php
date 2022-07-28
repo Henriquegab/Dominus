@@ -25,7 +25,7 @@
 </head>
 <body class="bg-light">
     <figure id="background-image-container">
-        <img src="{{ URL::asset('storage/images/top-background-home.jpg') }}" alt="">
+        <img src="{{ URL::asset('storage/template_images/top-background-home.jpg') }}" alt="">
     </figure>
     @include('web.layout.header', \compact('configuracao'))
     <main id="main-content">

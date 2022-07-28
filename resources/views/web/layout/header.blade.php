@@ -1,5 +1,5 @@
 <header id="main-header">
-    <div class="container d-flex py-2 px-0">
+    <div class="container d-flex pt-2 px-0">
         <a class="logo-container col d-flex justify-content-start" href="{{ route('home.index') }}">
             <figure class="header-logo m-0">
                 <img src="{{ URL::asset($configuracao->logo) }}" alt="logo do Dominus" class="img-fluid">

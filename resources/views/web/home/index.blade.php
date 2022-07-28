@@ -1,5 +1,6 @@
 @extends('web.layout.layout')
 @section('content')
+@if(!empty($carrosseis))
 <section id="home-carousel">
     <div class="owl-carousel owl-carousel-light">
         @foreach ($carrosseis as $carrossel)
@@ -13,9 +14,10 @@
         @endforeach
     </div>
 </section>
+@endif
 <section class="section-small">
     <div class="card shadow-sm">
-        <div id="contato" class="split-section flex-wrap-reverse px-2">
+        <div class="split-section flex-wrap-reverse px-2">
             <div class="col-md-6 py-4">
                 <h2 class="mb-4">Faça seu pedido pelo whatsapp</h2>
                 <p class="mb-4">Entre em contato pelo whatsapp e receba o cardápio e faça pedidos sem necessidade de aplicativos</p>
@@ -63,22 +65,24 @@
         <div class="pitbar bg_golden text-center">
             <h3 class="m-0">Atendemos somente Montes Claros e região</h3>
         </div>
-        <div class="foodmenu-list">
-            <h2 class="text-center my-4">Cardápio do dia</h2>
-            <div id="cardapio" class="menu">
-                @foreach ($pratos as $prato)
-                    <div class="menu-item">
-                        <figure class="image">
-                            <img src="{{ URL::asset('storage/images/'.$prato->imagem) }}" alt="cardapio">
-                        </figure>
-                        <div class="content">
-                            <h5 class="title">{{ $prato->nome }}</h5>
-                            <span class="description">{{ $prato->conteudo }}</span>
+        @if(!empty($pratos))
+            <div class="foodmenu-list">
+                <h2 class="text-center my-4">Cardápio do dia</h2>
+                <div id="cardapio" class="menu">
+                    @foreach ($pratos as $prato)
+                        <div class="menu-item">
+                            <figure class="image">
+                                <img src="{{ URL::asset('storage/images/'.$prato->imagem) }}" alt="cardapio">
+                            </figure>
+                            <div class="content">
+                                <h5 class="title">{{ $prato->nome }}</h5>
+                                <span class="description">{{ $prato->conteudo }}</span>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </section>
 @endsection

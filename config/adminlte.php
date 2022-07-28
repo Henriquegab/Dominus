@@ -230,6 +230,12 @@ return [
 
         // Sidebar items:
 
+        ['header' => 'CARDÁPIO'],
+        [
+            'text' => 'Atualizar cardápio',
+            'route'  => 'cardapio.create',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         ['header' => 'PÁGINA WEB'],
         [
             'text' => 'Carrossel de imagens',
@@ -246,14 +252,6 @@ return [
             'route'  => 'admin.configuracoes.index',
             'icon' => 'fas fa-cog',
         ],
-        ['header' => 'CARDÁPIO'],
-        [
-            'text' => 'Atualizar cardápio',
-            'route'  => 'cardapio.create',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-
-
     ],
 
     /*
