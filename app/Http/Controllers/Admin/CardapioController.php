@@ -99,7 +99,7 @@ class CardapioController extends Controller
 
 
 
-        return redirect()->route('admin.home');
+        return redirect()->route('cardapio.create');
     }
 
     /**
