@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
     {{-- App theme --}}
-    <link rel="stylesheet" href="{{ asset('css/web.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/web.css') }}">
 </head>
 <body class="bg-light">
     <figure id="background-image-container">
