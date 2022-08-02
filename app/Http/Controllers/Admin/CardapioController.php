@@ -79,13 +79,14 @@ class CardapioController extends Controller
                     $data['nome'] = $request->nome[$i];
                     $data['conteudo'] = $request->conteudo[$i];
                     $data['cardapio_id'] = $cardapio->id;
+                    // dd(1);
                 }
 
 
 
                 Prato::create($data);
 
-
+                // dd(2);
             }
 
 
@@ -95,7 +96,7 @@ class CardapioController extends Controller
 
 
 
-
+            // dd(3);
 
 
 

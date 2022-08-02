@@ -9,7 +9,7 @@
                     <h2>{{ $carrossel->nome }}</h2>
                     <p>{{ $carrossel->descricao }}</p>
                 </div>
-                <figure class="m-0 col-md-6"><img src="{{ URL::asset($carrossel->imagem) }}" alt=""></figure>
+                <figure class="m-0 col-md-6"><img src="{{ URL::asset('storage/carrossel/'.$carrossel->imagem) }}" alt=""></figure>
             </div>
         @endforeach
     </div>

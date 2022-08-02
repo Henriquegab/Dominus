@@ -51,7 +51,7 @@ class Carrosseis extends Controller
                 $imagem = $request->file("imagem")->store('public/carrossel');
             }
 
-            $dados['imagem'] = $imagem ?? '';
+            $dados['imagem'] = substr($imagem, 17);
             Carrossel::create($dados);
         } catch (\Exception $e){}
 
@@ -91,7 +91,7 @@ class Carrosseis extends Controller
                 }
 
                 $imagem = $request->file("imagem")->store('public/carrossel');
-                $dados['imagem'] = !empty($imagem) ? str_replace('public', 'storage', $imagem) : '';
+                $dados['imagem'] = !empty($imagem) ? str_replace('public', 'storage', substr($imagem, 17)) : '';
             }
 
             $carrossel->update($dados);
