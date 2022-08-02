@@ -2,7 +2,7 @@
     <div class="container d-flex pt-2 px-0">
         <a class="logo-container col d-flex justify-content-start" href="{{ route('home.index') }}">
             <figure class="header-logo m-0">
-                <img src="{{ URL::asset($configuracao->logo) }}" alt="logo do Dominus" class="img-fluid">
+                <img src="{{ isset($configuracao->logo) ? URL::asset($configuracao->logo) : URL::asset('storage/template_images/logo.png') }}" alt="logo do Dominus" class="img-fluid">
             </figure>
             <title>Dominus Restaurante</title>
             <span class="header-title">
